@@ -17,4 +17,18 @@ public class ComunidadServiceImplement implements IComunidadService {
     public List<Comunidad> list(){
         return cR.findAll();
     }
+    @Override
+    public void insert(Comunidad comu){
+        cR.save(comu);
+    }
+    @Override
+    public void delete(int id){
+        cR.deleteById(id);
+    }
+    @Override
+    public void update(Comunidad comu){
+        cR.save(comu);
+    }
+
+
 }

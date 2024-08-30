@@ -16,4 +16,18 @@ public class Rol_UsuarioServiceImplement implements IRol_UsuarioService {
     public List<Rol_usuario> list(){
         return ruR.findAll();
     }
+
+    @Override
+    public  void insert(Rol_usuario rol) {
+        ruR.save(rol);
+    }
+    @Override
+    public  void update(Rol_usuario rol) {
+        ruR.save(rol);
+    }
+    // Tal vez se elimine
+    @Override
+    public Rol_usuario listId(int id){
+        return ruR.findById(id).orElse(new Rol_usuario());
+    }
 }

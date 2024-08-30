@@ -17,4 +17,18 @@ public class Metodo_PagoImplement implements IMetodo_PagoService {
     public List<Metodo_Pago> list(){
         return mpR.findAll();
     }
+
+    @Override
+    public void insert(Metodo_Pago metodo){
+        mpR.save(metodo);
+    }
+    @Override
+    public void delete(int id){
+        mpR.deleteById(id);
+    }
+    @Override
+    public void update(Metodo_Pago metodo){
+        mpR.save(metodo);
+    }
+
 }
