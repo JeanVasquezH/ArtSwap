@@ -3,6 +3,7 @@ package pe.edu.upc.artswapv1.entities;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "Usuario")
@@ -23,15 +24,25 @@ public class Usuario {
     @Column(name = "Fecha_Registro", nullable = false)
     private Date Fecha_Registro;
 
+    @ManyToOne
+    @JoinColumn(name="idComunidad")
+    private Comunidad comu;
+
+    @ManyToOne
+    @JoinColumn(name ="idRolUsuario")
+    private Rolusuario rolUser;
+
     public Usuario() {
     }
 
-    public Usuario(int idUsuario, String nombre, String correo_Electronico, String contrasena, Date fecha_Registro) {
+    public Usuario(int idUsuario, String nombre, String correo_Electronico, String contrasena, Date fecha_Registro, Comunidad comu, Rolusuario rolusuario) {
         IdUsuario = idUsuario;
         Nombre = nombre;
         Correo_Electronico = correo_Electronico;
         Contrasena = contrasena;
         Fecha_Registro = fecha_Registro;
+        this.comu = comu;
+        rolUser = rolusuario;
     }
 
     public int getIdUsuario() {
@@ -72,5 +83,21 @@ public class Usuario {
 
     public void setFecha_Registro(Date fecha_Registro) {
         Fecha_Registro = fecha_Registro;
+    }
+
+    public Comunidad getComu() {
+        return comu;
+    }
+
+    public void setComu(Comunidad comu) {
+        this.comu = comu;
+    }
+
+    public Rolusuario getRolUser() {
+        return rolUser;
+    }
+
+    public void setRolUser(Rolusuario rolUser) {
+        this.rolUser = rolUser;
     }
 }

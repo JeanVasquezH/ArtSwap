@@ -1,41 +1,17 @@
-package pe.edu.upc.artswapv1.entities;
+package pe.edu.upc.artswapv1.dtos;
 
-import jakarta.persistence.*;
+import pe.edu.upc.artswapv1.entities.ObraArte;
+import pe.edu.upc.artswapv1.entities.Usuario;
 
 import java.util.Date;
 
-@Entity
-@Table(name = "Intercambio")
-public class Intercambio {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class IntercambioDTO {
     private int IdIntercambio;
-
-    @Column(name = "Fecha_Intercambio", nullable = false)
     private Date Fecha_Intercambio;
-
-    @Column(name = "Estado", nullable = false, length = 20)
     private String Estado;
 
-    @ManyToOne
-    @JoinColumn(name="idUsuario")
     private Usuario usuario;
-
-    @ManyToOne
-    @JoinColumn(name ="idObraArte")
     private ObraArte obraArte;
-
-
-    public Intercambio(){
-    }
-
-    public Intercambio(int idIntercambio, Date fecha_Intercambio, String estado,  Usuario usuario,  ObraArte obraArte) {
-        IdIntercambio = idIntercambio;
-        Fecha_Intercambio = fecha_Intercambio;
-        Estado = estado;
-        this.usuario = usuario;
-        this.obraArte = obraArte;
-    }
 
     public int getIdIntercambio() {
         return IdIntercambio;
