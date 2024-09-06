@@ -1,37 +1,16 @@
-package pe.edu.upc.artswapv1.entities;
+package pe.edu.upc.artswapv1.dtos;
 
-import jakarta.persistence.*;
+import pe.edu.upc.artswapv1.entities.ObraArte;
+import pe.edu.upc.artswapv1.entities.Usuario;
 
 import java.util.Date;
 
-@Entity
-@Table(name = "Favoritos")
-public class Favoritos {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class FavoritosDTO {
     private int IdFavoritos;
-
-    @Column(name = "Fecha_anadid", nullable = false)
     private Date Fecha_anadid;
 
-    @ManyToOne
-    @JoinColumn(name="idUsuario")
     private Usuario usuario;
-
-    @ManyToOne
-    @JoinColumn(name="idObraArte")
     private ObraArte obraArt;
-
-
-    public Favoritos() {
-    }
-
-    public Favoritos(int idFavoritos, Date fecha_anadid, Usuario usuario, ObraArte obraArt) {
-        IdFavoritos = idFavoritos;
-        Fecha_anadid = fecha_anadid;
-        this.usuario = usuario;
-        this.obraArt = obraArt;
-    }
 
     public int getIdFavoritos() {
         return IdFavoritos;

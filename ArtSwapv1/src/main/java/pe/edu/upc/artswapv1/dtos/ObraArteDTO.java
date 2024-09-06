@@ -1,53 +1,19 @@
-package pe.edu.upc.artswapv1.entities;
+package pe.edu.upc.artswapv1.dtos;
 
-import jakarta.persistence.*;
+import pe.edu.upc.artswapv1.entities.Usuario;
 
 import java.util.Date;
 
-@Entity
-@Table(name="Obra_Arte")
-public class ObraArte {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class ObraArteDTO {
+
     private int IdObra_Arte;
-
-    @Column(name = "Titulo", nullable = false, length = 100)
     private String Titulo;
-
-    @Column(name = "Descripcion", nullable = false, length = 100)
     private String Descripcion;
-
-    @Column(name = "Fecha_Creacion", nullable = false)
     private Date Fecha_Creacion;
-
-    @Column(name = "Estado", nullable = false, length = 20)
     private String Estado;
-
-    @Column(name = "Precio", nullable = false)
     private double Precio;
-
-    @Column(name = "Valoracion", nullable = false)
     private int Valoracion;
-
-    //fata relacion uno a muchos con reseñas
-    @ManyToOne
-    @JoinColumn(name="idUsuario")
     private Usuario usua;
-
-
-    public ObraArte() {
-    }
-
-    public ObraArte(int idObra_Arte, String titulo, String descripcion, Date fecha_Creacion, String estado, double precio, int valoracion, Usuario usua) {
-        IdObra_Arte = idObra_Arte;
-        Titulo = titulo;
-        Descripcion = descripcion;
-        Fecha_Creacion = fecha_Creacion;
-        Estado = estado;
-        Precio = precio;
-        Valoracion = valoracion;
-        this.usua = usua;
-    }
 
     public int getIdObra_Arte() {
         return IdObra_Arte;
@@ -73,20 +39,20 @@ public class ObraArte {
         Descripcion = descripcion;
     }
 
-    public String getEstado() {
-        return Estado;
-    }
-
-    public void setEstado(String estado) {
-        Estado = estado;
-    }
-
     public Date getFecha_Creacion() {
         return Fecha_Creacion;
     }
 
     public void setFecha_Creacion(Date fecha_Creacion) {
         Fecha_Creacion = fecha_Creacion;
+    }
+
+    public String getEstado() {
+        return Estado;
+    }
+
+    public void setEstado(String estado) {
+        Estado = estado;
     }
 
     public double getPrecio() {

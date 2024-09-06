@@ -23,15 +23,25 @@ public class Subasta {
     @Column(name = "Estado", nullable = false,length = 20)
     private String Estado;
 
+    @ManyToOne
+    @JoinColumn(name="idUsuario")
+    private Usuario Usua;
+
+    @OneToOne
+    @JoinColumn(name="idObraArte")
+    private  ObraArte obraArt;
+
     public Subasta() {
     }
 
-    public Subasta(int idSubasta, Date fecha_Inicio, Date fecha_Fin, double precio, String estado) {
+    public Subasta(int idSubasta, Date fecha_Inicio, Date fecha_Fin, double precio, String estado, Usuario usua, ObraArte obraArt) {
         IdSubasta = idSubasta;
         Fecha_Inicio = fecha_Inicio;
         Fecha_Fin = fecha_Fin;
         Precio = precio;
         Estado = estado;
+        Usua = usua;
+        this.obraArt = obraArt;
     }
 
     public int getIdSubasta() {
@@ -72,5 +82,21 @@ public class Subasta {
 
     public void setEstado(String estado) {
         Estado = estado;
+    }
+
+    public Usuario getUsua() {
+        return Usua;
+    }
+
+    public void setUsua(Usuario usua) {
+        Usua = usua;
+    }
+
+    public ObraArte getObraArt() {
+        return obraArt;
+    }
+
+    public void setObraArt(ObraArte obraArt) {
+        this.obraArt = obraArt;
     }
 }

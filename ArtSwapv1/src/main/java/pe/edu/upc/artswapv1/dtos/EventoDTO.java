@@ -1,58 +1,21 @@
-package pe.edu.upc.artswapv1.entities;
+package pe.edu.upc.artswapv1.dtos;
 
-import jakarta.persistence.*;
+import pe.edu.upc.artswapv1.entities.ObraArte;
+import pe.edu.upc.artswapv1.entities.Usuario;
 
 import java.util.Date;
 
-@Entity
-@Table(name = "Evento")
-public class Evento {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class EventoDTO {
     private int IdEvento;
-
-    @Column(name = "Descripcion", nullable = false,length = 100)
     private String Descripcion;
-
-    @Column(name = "Fecha_Inicio", nullable = false)
     private Date Fecha_Inicio;
-
-    @Column(name = "Fecha_Fin", nullable = false)
     private Date Fecha_Fin;
-
-    @Column(name = "Tipo", nullable = false,length = 20)
     private String Tipo;
-
-    @Column(name = "Ubicacion", nullable = false,length = 100)
     private String Ubicacion;
-
-    @Column(name = "Valoracion", nullable = false)
     private int Valoracion;
 
-    @ManyToOne
-    @JoinColumn(name="idUsuario")
     private Usuario usua;
-
-    @ManyToOne
-    @JoinColumn(name="idObraArte")
     private ObraArte obraArt;
-
-    // Relacion con la tabla UsuariId y Obra_Arte_Id
-    public Evento() {
-    }
-
-    public Evento(int idEvento, String descripcion, Date fecha_Inicio, Date fecha_Fin, String tipo, String ubicacion, int valoracion,ObraArte obraArt,Usuario usua) {
-        IdEvento = idEvento;
-        Descripcion = descripcion;
-        Fecha_Inicio = fecha_Inicio;
-        Fecha_Fin = fecha_Fin;
-        Tipo = tipo;
-        Ubicacion = ubicacion;
-        Valoracion = valoracion;
-        this.obraArt = obraArt;
-        this.usua = usua;
-
-    }
 
     public int getIdEvento() {
         return IdEvento;
