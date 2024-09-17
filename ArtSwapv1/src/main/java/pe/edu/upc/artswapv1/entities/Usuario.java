@@ -92,8 +92,12 @@ public class Usuario implements Serializable {
         this.comu = comu;
         rolUser = rolusuario;
     }
+<<<<<<< HEAD
 
     public Long getIdUsuario() {
+=======
+    public int getIdUsuario() {
+>>>>>>> e4afb857534cae3f1fa4e47d98666c3379c7af0c
         return IdUsuario;
     }
 
