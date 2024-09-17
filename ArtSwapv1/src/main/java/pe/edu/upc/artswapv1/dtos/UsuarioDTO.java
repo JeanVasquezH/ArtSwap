@@ -1,5 +1,6 @@
 package pe.edu.upc.artswapv1.dtos;
 
+import org.apache.juli.logging.Log;
 import pe.edu.upc.artswapv1.entities.Comunidad;
 import pe.edu.upc.artswapv1.entities.Intercambio;
 import pe.edu.upc.artswapv1.entities.Rolusuario;
@@ -8,7 +9,7 @@ import java.util.Date;
 
 public class UsuarioDTO {
 
-    private int IdUsuario;
+    private Long IdUsuario;
     private String Nombre;
     private String Correo_Electronico;
     private String Contrasena;
@@ -18,11 +19,41 @@ public class UsuarioDTO {
     private Comunidad comu;
     private Rolusuario rolUser;
 
-    public int getIdUsuario() {
+    //Seguridad||||||||||||||||||||||||||||
+    private String username;
+    private String password;
+    private Boolean enabled;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+    //||||||||||||||||||||||||||||||||||||
+
+    public Long getIdUsuario() {
         return IdUsuario;
     }
 
-    public void setIdUsuario(int idUsuario) {
+    public void setIdUsuario(Long idUsuario) {
         IdUsuario = idUsuario;
     }
 

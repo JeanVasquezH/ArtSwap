@@ -17,17 +17,26 @@ public class RolUsuarioServiceImplement implements IRolUsuarioService {
         return ruR.findAll();
     }
 
-    @Override
-    public  void insert(Rolusuario rol) {
-        ruR.save(rol);
-    }
+    //seguridad
+
     @Override
     public  void update(Rolusuario rol) {
         ruR.save(rol);
     }
-    // Tal vez se elimine
+
     @Override
-    public Rolusuario listId(int id){
+    public void delete(Long idRol) {
+
+    }
+    //
+
+    @Override
+    public  void insert(Rolusuario rol) {
+        ruR.save(rol);
+    }
+
+    @Override
+    public Rolusuario listId(Long id) {
         return ruR.findById(id).orElse(new Rolusuario());
     }
 }

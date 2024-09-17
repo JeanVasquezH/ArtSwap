@@ -16,13 +16,27 @@ public class RolUsuarioController {
     @Autowired
     private IRolUsuarioService rU;
 
-
+    //Seguridad
     @PostMapping
-    public void insertar(@RequestBody RolUsuarioDTO dto){
-        ModelMapper m=new ModelMapper();
-        Rolusuario d=m.map(dto, Rolusuario.class);
-        rU.insert(d);
+    public void registrar(@RequestBody RolUsuarioDTO dto) {
+        ModelMapper m = new ModelMapper();
+        Rolusuario r = m.map(dto, Rolusuario.class);
+        rU.insert(r);
     }
+
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Long id) {
+        rU.delete(id);
+    }
+
+    @GetMapping("/{id}")
+    public RolUsuarioDTO listarId(@PathVariable("id") Long id) {
+        ModelMapper m = new ModelMapper();
+        RolUsuarioDTO dto = m.map(rU.listId(id), RolUsuarioDTO.class);
+        return dto;
+    }
+
+    //
 
     @PutMapping
     public void modificar(@RequestBody RolUsuarioDTO dto){

@@ -8,4 +8,9 @@ public interface IUsuarioService {
 
     public List<Usuario> list();
     public void insert(Usuario user);
+
+
+    public void delete(Long idUsuario);
+
+    public Usuario listarId(Long idUsuario);
 }

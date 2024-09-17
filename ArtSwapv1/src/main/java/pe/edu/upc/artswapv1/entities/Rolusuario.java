@@ -2,12 +2,14 @@ package pe.edu.upc.artswapv1.entities;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
+
 @Entity
-@Table(name = "Rol_usuario")
-public class Rolusuario {
+@Table(name = "roles", uniqueConstraints = {@UniqueConstraint(columnNames = {"user_id", "rol"})})
+public class Rolusuario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int IdRol_usuario;
+    private Long IdRol_usuario;
 
     @Column(name = "Nombre", nullable = false,length = 20)
     private String Nombre;
@@ -18,17 +20,44 @@ public class Rolusuario {
     public Rolusuario() {
     }
 
-    public Rolusuario(int idRol_usuario, String nombre, String descripcion) {
+    //Seguridad
+
+    private String rol;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private Usuario user;
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
+
+    public Usuario getUser() {
+        return user;
+    }
+
+    public void setUser(Usuario user) {
+        this.user = user;
+    }
+
+    //
+
+
+    public Rolusuario(Long idRol_usuario, String nombre, String descripcion) {
         IdRol_usuario = idRol_usuario;
         Nombre = nombre;
         Descripcion = descripcion;
     }
 
-    public int getIdRol_usuario() {
+    public Long getIdRol_usuario() {
         return IdRol_usuario;
     }
 
-    public void setIdRol_usuario(int idRol_usuario) {
+    public void setIdRol_usuario(Long idRol_usuario) {
         IdRol_usuario = idRol_usuario;
     }
 

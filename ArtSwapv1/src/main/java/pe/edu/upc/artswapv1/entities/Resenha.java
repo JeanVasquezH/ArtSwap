@@ -5,11 +5,11 @@ import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "Reserva")
+@Table(name = "Resenha")
 public class Resenha {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int IdReserva;
+    private int IdResenha;
 
     @Column(name = "Calificacion", nullable = false)
     private int Calificacion;
@@ -28,20 +28,20 @@ public class Resenha {
     public Resenha(){
     }
 
-    public Resenha(int idReserva, int calificacion, String comentario, Date fecha_Resena, Usuario usua) {
-        IdReserva = idReserva;
+    public Resenha(int idResenha, int calificacion, String comentario, Date fecha_Resena, Usuario usua) {
+        IdResenha = idResenha;
         Calificacion = calificacion;
         Comentario = comentario;
         Fecha_Resena = fecha_Resena;
         this.usua = usua;
     }
 
-    public int getIdReserva() {
-        return IdReserva;
+    public int getIdResenha() {
+        return IdResenha;
     }
 
-    public void setIdReserva(int idReserva) {
-        IdReserva = idReserva;
+    public void setIdResenha(int idResenha) {
+        IdResenha = idResenha;
     }
 
     public int getCalificacion() {

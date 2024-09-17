@@ -7,6 +7,9 @@ import java.util.List;
 public interface IRolUsuarioService {
     public List<Rolusuario> list();
     public void insert(Rolusuario rol);
-    public Rolusuario listId(int id);
+    public Rolusuario listId(Long id);
     public void update(Rolusuario rol);
+
+    //seguridad
+    public void delete(Long idRol);
 }
