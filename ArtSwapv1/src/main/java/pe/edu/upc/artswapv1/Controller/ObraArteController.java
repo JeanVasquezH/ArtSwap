@@ -29,4 +29,12 @@ public class ObraArteController {
             return m.map(x,ObraArteDTO.class);
         }).collect(Collectors.toList());
     }
+
+    @GetMapping("/por-valoracion")
+    public List<ObraArteDTO> listarPorValoracion(){
+        return oS.listByValoracion().stream().map(x->{
+            ModelMapper m=new ModelMapper();
+            return m.map(x,ObraArteDTO.class);
+        }).collect(Collectors.toList());
+    }
 }

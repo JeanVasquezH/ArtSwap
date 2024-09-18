@@ -23,4 +23,9 @@ public class ResenhaServiceImplement implements IResenhaService {
     public void insert(Resenha resena) {
         rR.save(resena);
     }
+
+    @Override
+    public void delete(int id) {
+        rR.deleteById(id);
+    }
 }

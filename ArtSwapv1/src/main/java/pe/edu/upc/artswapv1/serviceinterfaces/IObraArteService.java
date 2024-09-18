@@ -7,4 +7,6 @@ import java.util.List;
 public interface IObraArteService {
     public List<ObraArte> list();
     public void insert(ObraArte obraArte);
+    List<ObraArte> listByValoracion();
+
 }
