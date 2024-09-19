@@ -29,9 +29,4 @@ public class ResenhaControlller {
             return m.map(x,ResenhaDTO.class);
         }).collect(Collectors.toList());
     }
-
-    @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable("id") int id) {
-        rS.delete(id);
-    }
 }

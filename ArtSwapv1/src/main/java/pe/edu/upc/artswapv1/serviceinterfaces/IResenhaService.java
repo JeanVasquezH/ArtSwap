@@ -9,5 +9,4 @@ public interface IResenhaService {
 
     public List<Resenha> list();
     public void insert(Resenha resena);
-    void delete(int id);
 }

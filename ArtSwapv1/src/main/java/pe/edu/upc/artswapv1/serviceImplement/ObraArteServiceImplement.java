@@ -22,9 +22,4 @@ public class ObraArteServiceImplement implements IObraArteService {
     public void insert(ObraArte obraArte) {
         oR.save(obraArte);
     }
-
-    @Override
-    public List<ObraArte> listByValoracion() {
-        return oR.findAllByOrderByValoracionDesc();
-    }
 }
