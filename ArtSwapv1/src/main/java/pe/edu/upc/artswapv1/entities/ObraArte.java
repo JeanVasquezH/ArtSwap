@@ -29,16 +29,21 @@ public class ObraArte {
     @Column(name = "Valoracion", nullable = false)
     private int Valoracion;
 
-    //fata relacion uno a muchos con reseñas
+    //relacion con ususuario id
     @ManyToOne
     @JoinColumn(name="idUsuario")
     private Usuario usua;
+
+    //relacion con reseñas
+    @ManyToOne
+    @JoinColumn(name="idResenha")
+    private Resenha resenha;
 
 
     public ObraArte() {
     }
 
-    public ObraArte(int idObra_Arte, String titulo, String descripcion, Date fecha_Creacion, String estado, double precio, int valoracion, Usuario usua) {
+    public ObraArte(int idObra_Arte, String titulo, String descripcion, Date fecha_Creacion, String estado, double precio, int valoracion, Usuario usua, Resenha resenha) {
         IdObra_Arte = idObra_Arte;
         Titulo = titulo;
         Descripcion = descripcion;
@@ -47,6 +52,9 @@ public class ObraArte {
         Precio = precio;
         Valoracion = valoracion;
         this.usua = usua;
+        this.resenha = resenha;
+
+
     }
 
     public int getIdObra_Arte() {
@@ -112,4 +120,8 @@ public class ObraArte {
     public void setUsua(Usuario usua) {
         this.usua = usua;
     }
+
+    public Resenha getResenha() {return resenha;}
+
+    public void setResenha(Resenha resenha) {this.resenha = resenha;}
 }
