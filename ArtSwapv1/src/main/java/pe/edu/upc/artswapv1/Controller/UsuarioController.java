@@ -48,8 +48,6 @@ public class UsuarioController {
         return dto;
     }
 
-
-
     //
     @GetMapping
     public List<UsuarioDTO> listar(){

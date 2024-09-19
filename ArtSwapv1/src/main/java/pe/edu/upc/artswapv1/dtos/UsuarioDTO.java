@@ -11,13 +11,8 @@ public class UsuarioDTO {
 
     private Long IdUsuario;
     private String Nombre;
-    private String Correo_Electronico;
-    private String Contrasena;
-    private Date Fecha_Registro;
-
 
     private Comunidad comu;
-    private Rolusuario rolUser;
 
     //Seguridad||||||||||||||||||||||||||||
     private String username;
@@ -65,29 +60,6 @@ public class UsuarioDTO {
         Nombre = nombre;
     }
 
-    public String getCorreo_Electronico() {
-        return Correo_Electronico;
-    }
-
-    public void setCorreo_Electronico(String correo_Electronico) {
-        Correo_Electronico = correo_Electronico;
-    }
-
-    public String getContrasena() {
-        return Contrasena;
-    }
-
-    public void setContrasena(String contrasena) {
-        Contrasena = contrasena;
-    }
-
-    public Date getFecha_Registro() {
-        return Fecha_Registro;
-    }
-
-    public void setFecha_Registro(Date fecha_Registro) {
-        Fecha_Registro = fecha_Registro;
-    }
 
     public Comunidad getComu() {
         return comu;
@@ -95,13 +67,5 @@ public class UsuarioDTO {
 
     public void setComu(Comunidad comu) {
         this.comu = comu;
-    }
-
-    public Rolusuario getRolUser() {
-        return rolUser;
-    }
-
-    public void setRolUser(Rolusuario rolUser) {
-        this.rolUser = rolUser;
     }
 }

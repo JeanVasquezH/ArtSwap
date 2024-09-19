@@ -2,6 +2,7 @@ package pe.edu.upc.artswapv1.Controller;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.artswapv1.dtos.FavoritosDTO;
 import pe.edu.upc.artswapv1.entities.Favoritos;
@@ -17,12 +18,14 @@ public class FavoritosController {
     private IFavoritoService iFa;
 
     @PostMapping
+    @PreAuthorize("hasAnyAuthority('USUARIO','ARTISTA')")
     public void insertar(@RequestBody FavoritosDTO dto){
         ModelMapper m=new ModelMapper();
         Favoritos mn=m.map(dto,Favoritos.class);
         iFa.insert(mn);
     }
     @GetMapping
+    @PreAuthorize("hasAuthority('USUARIO')")
     public List<FavoritosDTO> listar() {
         return iFa.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();

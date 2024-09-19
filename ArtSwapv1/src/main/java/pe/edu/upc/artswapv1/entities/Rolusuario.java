@@ -11,9 +11,6 @@ public class Rolusuario implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long IdRol_usuario;
 
-    @Column(name = "Nombre", nullable = false,length = 20)
-    private String Nombre;
-
     @Column(name = "Descripcion", nullable = false,length = 35)
     private String Descripcion;
 
@@ -47,9 +44,8 @@ public class Rolusuario implements Serializable {
     //
 
 
-    public Rolusuario(Long idRol_usuario, String nombre, String descripcion) {
+    public Rolusuario(Long idRol_usuario, String descripcion) {
         IdRol_usuario = idRol_usuario;
-        Nombre = nombre;
         Descripcion = descripcion;
     }
 
@@ -59,14 +55,6 @@ public class Rolusuario implements Serializable {
 
     public void setIdRol_usuario(Long idRol_usuario) {
         IdRol_usuario = idRol_usuario;
-    }
-
-    public String getNombre() {
-        return Nombre;
-    }
-
-    public void setNombre(String nombre) {
-        Nombre = nombre;
     }
 
     public String getDescripcion() {
