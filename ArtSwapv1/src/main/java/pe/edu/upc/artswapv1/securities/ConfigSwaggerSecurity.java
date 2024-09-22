@@ -16,11 +16,12 @@ public class ConfigSwaggerSecurity {
                         .title("API con JWT Autenticación")
                         .version("1.0")
                         .description("API protegida con JWT"))
-                .addSecurityItem(new SecurityRequirement().addList("bearerAuth"))
+                .addSecurityItem(new SecurityRequirement().addList("bearerAuth")) // Aplica a todas las rutas
                 .components(new Components()
                         .addSecuritySchemes("bearerAuth", new SecurityScheme()
                                 .type(SecurityScheme.Type.HTTP)
                                 .scheme("bearer")
                                 .bearerFormat("JWT")));
     }
+
 }
