@@ -29,4 +29,16 @@ public class ObraArteController {
             return m.map(x,ObraArteDTO.class);
         }).collect(Collectors.toList());
     }
+
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id){
+        oS.delete(id);
+    }
+    @PutMapping
+    public void modificar(@RequestBody ObraArteDTO dto){
+        ModelMapper m=new ModelMapper();
+        ObraArte d=m.map(dto,ObraArte.class);
+        oS.update(d);
+    }
+
 }

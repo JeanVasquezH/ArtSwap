@@ -9,4 +9,8 @@ public interface IResenhaService {
 
     public List<Resenha> list();
     public void insert(Resenha resena);
+
+    public void delete(int id);
+    public void update(Resenha review);
+
 }

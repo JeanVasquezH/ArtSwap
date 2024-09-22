@@ -23,4 +23,14 @@ public class FavoritoServiceImplement implements IFavoritoService {
     public void insert(Favoritos favori) {
         iR.save(favori);
     }
+
+    @Override
+    public void delete(int id) {
+       iR.deleteById(id);
+    }
+
+    @Override
+    public void update(Favoritos fav) {
+        iR.save(fav);
+    }
 }

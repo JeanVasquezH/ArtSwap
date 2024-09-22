@@ -29,4 +29,14 @@ public class EventoController {
             return m.map(x,EventoDTO.class);
         }).collect(Collectors.toList());
     }
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id){
+        eS.delete(id);
+    }
+    @PutMapping
+    public void modificar(@RequestBody EventoDTO dto){
+        ModelMapper m=new ModelMapper();
+        Evento d=m.map(dto,Evento.class);
+        eS.update(d);
+    }
 }

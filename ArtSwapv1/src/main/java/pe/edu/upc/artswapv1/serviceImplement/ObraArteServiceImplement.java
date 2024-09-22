@@ -22,4 +22,14 @@ public class ObraArteServiceImplement implements IObraArteService {
     public void insert(ObraArte obraArte) {
         oR.save(obraArte);
     }
+
+    @Override
+    public void delete(int id) {
+        oR.deleteById(id);
+    }
+
+    @Override
+    public void update(ObraArte obraArt) {
+        oR.save(obraArt);
+    }
 }

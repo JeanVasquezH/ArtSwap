@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("intercambios")
-public class IntercambioController {
+public class    IntercambioController {
     @Autowired
     private IIntercambioService iS;
 
@@ -28,5 +28,16 @@ public class IntercambioController {
             ModelMapper m=new ModelMapper();
             return m.map(x,IntercambioDTO.class);
         }).collect(Collectors.toList());
+    }
+
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id){
+        iS.delete(id);
+    }
+    @PutMapping
+    public void modificar(@RequestBody IntercambioDTO dto){
+        ModelMapper m=new ModelMapper();
+        Intercambio d=m.map(dto,Intercambio.class);
+        iS.update(d);
     }
 }

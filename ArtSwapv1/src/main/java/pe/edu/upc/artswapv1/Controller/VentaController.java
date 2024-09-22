@@ -29,4 +29,15 @@ public class VentaController {
             return m.map(x,VentaDTO.class);
         }).collect(Collectors.toList());
     }
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id){
+        vS.delete(id);
+    }
+
+    @PutMapping
+    public void modificar(@RequestBody VentaDTO dto){
+        ModelMapper m=new ModelMapper();
+        Venta d=m.map(dto,Venta.class);
+        vS.update(d);
+    }
 }

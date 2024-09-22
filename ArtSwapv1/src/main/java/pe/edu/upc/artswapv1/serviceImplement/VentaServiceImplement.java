@@ -22,4 +22,13 @@ public class VentaServiceImplement implements IVentaService {
     public void insert(Venta vent) {
         vR.save(vent);
     }
+
+    @Override
+    public void delete(int id) {
+        vR.deleteById(id);
+    }
+    @Override
+    public void update(Venta venta) {
+        vR.save(venta);
+    }
 }

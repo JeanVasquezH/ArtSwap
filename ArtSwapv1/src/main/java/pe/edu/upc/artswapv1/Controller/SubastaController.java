@@ -29,4 +29,15 @@ public class SubastaController {
             return m.map(x,SubastaDTO.class);
         }).collect(Collectors.toList());
     }
+
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id){
+        sS.delete(id);
+    }
+    @PutMapping
+    public void modificar(@RequestBody SubastaDTO dto){
+        ModelMapper m=new ModelMapper();
+        Subasta d=m.map(dto,Subasta.class);
+        sS.update(d);
+    }
 }

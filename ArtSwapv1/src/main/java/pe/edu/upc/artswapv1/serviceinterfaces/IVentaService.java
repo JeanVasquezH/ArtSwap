@@ -7,4 +7,6 @@ import java.util.List;
 public interface IVentaService {
     public List<Venta> list();
     public void insert(Venta vent);
+    public void delete(int id);
+    public void update(Venta venta);
 }

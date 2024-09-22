@@ -23,4 +23,14 @@ public class SubastaServiceImplement implements ISubastaService {
     public void insert(Subasta subas) {
         sR.save(subas);
     }
+
+    @Override
+    public void delete(int id) {
+        sR.deleteById(id);
+    }
+
+    @Override
+    public void update(Subasta subasta) {
+        sR.save(subasta);
+    }
 }
