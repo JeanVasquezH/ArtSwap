@@ -10,4 +10,5 @@ public interface IObraArteService {
     public void delete(int id);
     public void update(ObraArte obraArt);
 
+    public List<String[]> cantObraArtePorPersona();
 }

@@ -9,4 +9,6 @@ public interface IComunidadService {
     public void insert(Comunidad comu);
     public void delete(int id);
     public void update(Comunidad comu);
+
+    public List<String[]>CantidadPersonasPorComunidad();
 }

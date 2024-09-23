@@ -32,4 +32,9 @@ public class ObraArteServiceImplement implements IObraArteService {
     public void update(ObraArte obraArt) {
         oR.save(obraArt);
     }
+
+    @Override
+    public List<String[]> cantObraArtePorPersona() {
+        return oR.cantObraArtePorPersona();
+    }
 }

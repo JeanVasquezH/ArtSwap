@@ -13,5 +13,4 @@ public interface IIntercambioRepository extends JpaRepository<Intercambio, Integ
 
 
 
-
 }

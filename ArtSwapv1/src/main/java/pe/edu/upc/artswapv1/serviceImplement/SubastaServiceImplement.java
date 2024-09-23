@@ -33,4 +33,9 @@ public class SubastaServiceImplement implements ISubastaService {
     public void update(Subasta subasta) {
         sR.save(subasta);
     }
+
+    @Override
+    public List<String[]> VerSubastasActiva() {
+        return sR.VerSubastasActiva() ;
+    }
 }

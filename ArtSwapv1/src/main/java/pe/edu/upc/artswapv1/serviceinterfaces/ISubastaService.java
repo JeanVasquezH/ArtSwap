@@ -12,4 +12,7 @@ public interface ISubastaService {
     public void delete(int id);
     public void update(Subasta subasta);
 
+    //Query
+
+    public List<String[]>VerSubastasActiva();
 }

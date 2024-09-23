@@ -2,6 +2,7 @@ package pe.edu.upc.artswapv1.entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -12,10 +13,10 @@ public class Subasta {
     private int IdSubasta;
 
     @Column(name = "Fecha_Inicio", nullable = false)
-    private Date Fecha_Inicio;
+    private LocalDate FechaInicio;
 
     @Column(name = "Fecha_Fin", nullable = false)
-    private Date Fecha_Fin;
+    private LocalDate FechaFin;
 
     @Column(name = "Precio", nullable = false)
     private double  Precio;
@@ -34,10 +35,10 @@ public class Subasta {
     public Subasta() {
     }
 
-    public Subasta(int idSubasta, Date fecha_Inicio, Date fecha_Fin, double precio, String estado, Usuario usua, ObraArte obraArt) {
+    public Subasta(int idSubasta, LocalDate fecha_Inicio, LocalDate fecha_Fin, double precio, String estado, Usuario usua, ObraArte obraArt) {
         IdSubasta = idSubasta;
-        Fecha_Inicio = fecha_Inicio;
-        Fecha_Fin = fecha_Fin;
+        FechaInicio = fecha_Inicio;
+        FechaFin = fecha_Fin;
         Precio = precio;
         Estado = estado;
         Usua = usua;
@@ -52,12 +53,12 @@ public class Subasta {
         IdSubasta = idSubasta;
     }
 
-    public Date getFecha_Inicio() {
-        return Fecha_Inicio;
+    public LocalDate getFecha_Inicio() {
+        return FechaInicio;
     }
 
-    public void setFecha_Inicio(Date fecha_Inicio) {
-        Fecha_Inicio = fecha_Inicio;
+    public void setFecha_Inicio(LocalDate fecha_Inicio) {
+        FechaInicio = fecha_Inicio;
     }
 
     public double getPrecio() {
@@ -68,12 +69,12 @@ public class Subasta {
         Precio = precio;
     }
 
-    public Date getFecha_Fin() {
-        return Fecha_Fin;
+    public LocalDate getFecha_Fin() {
+        return FechaFin;
     }
 
-    public void setFecha_Fin(Date fecha_Fin) {
-        Fecha_Fin = fecha_Fin;
+    public void setFecha_Fin(LocalDate fecha_Fin) {
+        FechaFin = fecha_Fin;
     }
 
     public String getEstado() {
