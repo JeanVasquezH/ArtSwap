@@ -4,7 +4,7 @@ import pe.edu.upc.artswapv1.entities.Usuario;
 
 public class RolUsuarioDTO {
 
-    private Long IdRol_usuario;
+    private Long IdRolusuario;
     private String Descripcion;
     //Seguridad
     private String rol;
@@ -28,12 +28,14 @@ public class RolUsuarioDTO {
 
 
     //
-    public Long getIdRol_usuario() {
-        return IdRol_usuario;
+
+
+    public Long getIdRolusuario() {
+        return IdRolusuario;
     }
 
-    public void setIdRol_usuario(Long idRol_usuario) {
-        IdRol_usuario = idRol_usuario;
+    public void setIdRolusuario(Long idRolusuario) {
+        IdRolusuario = idRolusuario;
     }
 
     public String getDescripcion() {

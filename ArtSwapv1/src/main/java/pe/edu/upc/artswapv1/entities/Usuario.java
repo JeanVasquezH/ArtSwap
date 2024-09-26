@@ -70,7 +70,7 @@ public class Usuario implements Serializable {
     //
 
 
-    public Usuario(Long idUsuario, String nombre, String correo_Electronico,  Date fecha_Registro, Comunidad comu, Rolusuario rolusuario) {
+    public Usuario(Long idUsuario, String nombre, Comunidad comu) {
         IdUsuario = idUsuario;
         Nombre = nombre;
         this.comu = comu;

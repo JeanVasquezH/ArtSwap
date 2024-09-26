@@ -2,13 +2,14 @@ package pe.edu.upc.artswapv1.dtos;
 
 import pe.edu.upc.artswapv1.entities.Usuario;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class ResenhaDTO {
     private int IdReserva;
     private int Calificacion;
     private String Comentario;
-    private Date Fecha_Resena;
+    private LocalDate FechaResena;
 
     private Usuario usua;
 
@@ -36,12 +37,12 @@ public class ResenhaDTO {
         Comentario = comentario;
     }
 
-    public Date getFecha_Resena() {
-        return Fecha_Resena;
+    public LocalDate getFechaResena() {
+        return FechaResena;
     }
 
-    public void setFecha_Resena(Date fecha_Resena) {
-        Fecha_Resena = fecha_Resena;
+    public void setFechaResena(LocalDate fechaResena) {
+        FechaResena = fechaResena;
     }
 
     public Usuario getUsua() {

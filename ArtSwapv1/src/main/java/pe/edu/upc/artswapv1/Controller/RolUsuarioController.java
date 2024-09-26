@@ -52,4 +52,5 @@ public class RolUsuarioController {
             return m.map(x, RolUsuarioDTO.class);
         }).collect(Collectors.toList());
     }
+
 }

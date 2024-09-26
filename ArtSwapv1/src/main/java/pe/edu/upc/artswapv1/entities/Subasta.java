@@ -2,6 +2,7 @@ package pe.edu.upc.artswapv1.entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -11,11 +12,11 @@ public class Subasta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int IdSubasta;
 
-    @Column(name = "Fecha_Inicio", nullable = false)
-    private Date Fecha_Inicio;
+    @Column(name = "FechaInicio", nullable = false)
+    private LocalDate FechaInicio;
 
-    @Column(name = "Fecha_Fin", nullable = false)
-    private Date Fecha_Fin;
+    @Column(name = "FechaFin", nullable = false)
+    private LocalDate FechaFin;
 
     @Column(name = "Precio", nullable = false)
     private double  Precio;
@@ -34,10 +35,10 @@ public class Subasta {
     public Subasta() {
     }
 
-    public Subasta(int idSubasta, Date fecha_Inicio, Date fecha_Fin, double precio, String estado, Usuario usua, ObraArte obraArt) {
+    public Subasta(int idSubasta, LocalDate fechaInicio, LocalDate fechaFin, double precio, String estado, Usuario usua, ObraArte obraArt) {
         IdSubasta = idSubasta;
-        Fecha_Inicio = fecha_Inicio;
-        Fecha_Fin = fecha_Fin;
+        FechaInicio = fechaInicio;
+        FechaFin = fechaFin;
         Precio = precio;
         Estado = estado;
         Usua = usua;
@@ -52,12 +53,20 @@ public class Subasta {
         IdSubasta = idSubasta;
     }
 
-    public Date getFecha_Inicio() {
-        return Fecha_Inicio;
+    public LocalDate getFechaInicio() {
+        return FechaInicio;
     }
 
-    public void setFecha_Inicio(Date fecha_Inicio) {
-        Fecha_Inicio = fecha_Inicio;
+    public void setFechaInicio(LocalDate fechaInicio) {
+        FechaInicio = fechaInicio;
+    }
+
+    public LocalDate getFechaFin() {
+        return FechaFin;
+    }
+
+    public void setFechaFin(LocalDate fechaFin) {
+        FechaFin = fechaFin;
     }
 
     public double getPrecio() {
@@ -66,14 +75,6 @@ public class Subasta {
 
     public void setPrecio(double precio) {
         Precio = precio;
-    }
-
-    public Date getFecha_Fin() {
-        return Fecha_Fin;
-    }
-
-    public void setFecha_Fin(Date fecha_Fin) {
-        Fecha_Fin = fecha_Fin;
     }
 
     public String getEstado() {

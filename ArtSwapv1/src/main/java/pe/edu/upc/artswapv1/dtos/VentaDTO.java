@@ -3,13 +3,14 @@ package pe.edu.upc.artswapv1.dtos;
 import pe.edu.upc.artswapv1.entities.MetodoPago;
 import pe.edu.upc.artswapv1.entities.ObraArte;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class VentaDTO {
     private int IdVenta;
-    private Date Fecha_Venta;
+    private LocalDate FechaVenta;
     private int Precio;
-    private String Metodo_Pago;
+    private String MetodoPago;
 
     private ObraArte ObraArt;
     private MetodoPago metodoPago;
@@ -23,12 +24,12 @@ public class VentaDTO {
         IdVenta = idVenta;
     }
 
-    public Date getFecha_Venta() {
-        return Fecha_Venta;
+    public LocalDate getFechaVenta() {
+        return FechaVenta;
     }
 
-    public void setFecha_Venta(Date fecha_Venta) {
-        Fecha_Venta = fecha_Venta;
+    public void setFechaVenta(LocalDate fechaVenta) {
+        FechaVenta = fechaVenta;
     }
 
     public int getPrecio() {
@@ -39,27 +40,23 @@ public class VentaDTO {
         Precio = precio;
     }
 
+    public String getMetodoPago() {
+        return MetodoPago;
+    }
+
+    public void setMetodoPago(pe.edu.upc.artswapv1.entities.MetodoPago metodoPago) {
+        this.metodoPago = metodoPago;
+    }
+
+    public void setMetodoPago(String metodoPago) {
+        MetodoPago = metodoPago;
+    }
+
     public ObraArte getObraArt() {
         return ObraArt;
     }
 
     public void setObraArt(ObraArte obraArt) {
         ObraArt = obraArt;
-    }
-
-    public String getMetodo_Pago() {
-        return Metodo_Pago;
-    }
-
-    public void setMetodo_Pago(String metodo_Pago) {
-        Metodo_Pago = metodo_Pago;
-    }
-
-    public MetodoPago getMetodoPago() {
-        return metodoPago;
-    }
-
-    public void setMetodoPago(MetodoPago metodoPago) {
-        this.metodoPago = metodoPago;
     }
 }

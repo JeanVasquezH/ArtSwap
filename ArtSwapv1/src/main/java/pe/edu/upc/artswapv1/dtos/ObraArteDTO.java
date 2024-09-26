@@ -2,26 +2,21 @@ package pe.edu.upc.artswapv1.dtos;
 
 import pe.edu.upc.artswapv1.entities.Usuario;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class ObraArteDTO {
 
-    private int IdObra_Arte;
+    private int IdObraArte;
     private String Titulo;
     private String Descripcion;
-    private Date Fecha_Creacion;
+    private LocalDate FechaCreacion;
     private String Estado;
     private double Precio;
     private int Valoracion;
     private Usuario usua;
 
-    public int getIdObra_Arte() {
-        return IdObra_Arte;
-    }
 
-    public void setIdObra_Arte(int idObra_Arte) {
-        IdObra_Arte = idObra_Arte;
-    }
 
     public String getTitulo() {
         return Titulo;
@@ -39,12 +34,20 @@ public class ObraArteDTO {
         Descripcion = descripcion;
     }
 
-    public Date getFecha_Creacion() {
-        return Fecha_Creacion;
+    public int getIdObraArte() {
+        return IdObraArte;
     }
 
-    public void setFecha_Creacion(Date fecha_Creacion) {
-        Fecha_Creacion = fecha_Creacion;
+    public void setIdObraArte(int idObraArte) {
+        IdObraArte = idObraArte;
+    }
+
+    public LocalDate getFechaCreacion() {
+        return FechaCreacion;
+    }
+
+    public void setFechaCreacion(LocalDate fechaCreacion) {
+        FechaCreacion = fechaCreacion;
     }
 
     public String getEstado() {

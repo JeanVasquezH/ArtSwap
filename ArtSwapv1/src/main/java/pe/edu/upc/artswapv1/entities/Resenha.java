@@ -1,8 +1,7 @@
 package pe.edu.upc.artswapv1.entities;
 
 import jakarta.persistence.*;
-
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "Resenha")
@@ -17,8 +16,8 @@ public class Resenha {
     @Column(name = "Comentario", nullable = false, length = 50)
     private String Comentario;
 
-    @Column(name = "Fecha_Resena", nullable = false)
-    private Date Fecha_Resena;
+    @Column(name = "FechaResena", nullable = false)
+    private LocalDate FechaResena;
 
     @ManyToOne
     @JoinColumn(name = "idUsuario")
@@ -28,11 +27,11 @@ public class Resenha {
     public Resenha(){
     }
 
-    public Resenha(int idResenha, int calificacion, String comentario, Date fecha_Resena, Usuario usua) {
+    public Resenha(int idResenha, int calificacion, String comentario, LocalDate fechaResena, Usuario usua) {
         IdResenha = idResenha;
         Calificacion = calificacion;
         Comentario = comentario;
-        Fecha_Resena = fecha_Resena;
+        FechaResena = fechaResena;
         this.usua = usua;
     }
 
@@ -60,12 +59,12 @@ public class Resenha {
         Comentario = comentario;
     }
 
-    public Date getFecha_Resena() {
-        return Fecha_Resena;
+    public LocalDate getFechaResena() {
+        return FechaResena;
     }
 
-    public void setFecha_Resena(Date fecha_Resena) {
-        Fecha_Resena = fecha_Resena;
+    public void setFechaResena(LocalDate fechaResena) {
+        FechaResena = fechaResena;
     }
 
     public Usuario getUsua() {

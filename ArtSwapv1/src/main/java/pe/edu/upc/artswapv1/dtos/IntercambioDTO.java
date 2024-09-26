@@ -3,11 +3,12 @@ package pe.edu.upc.artswapv1.dtos;
 import pe.edu.upc.artswapv1.entities.ObraArte;
 import pe.edu.upc.artswapv1.entities.Usuario;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class IntercambioDTO {
     private int IdIntercambio;
-    private Date Fecha_Intercambio;
+    private LocalDate FechaIntercambio;
     private String Estado;
 
     private Usuario usuario;
@@ -21,12 +22,12 @@ public class IntercambioDTO {
         IdIntercambio = idIntercambio;
     }
 
-    public Date getFecha_Intercambio() {
-        return Fecha_Intercambio;
+    public LocalDate getFechaIntercambio() {
+        return FechaIntercambio;
     }
 
-    public void setFecha_Intercambio(Date fecha_Intercambio) {
-        Fecha_Intercambio = fecha_Intercambio;
+    public void setFechaIntercambio(LocalDate fechaIntercambio) {
+        FechaIntercambio = fechaIntercambio;
     }
 
     public String getEstado() {

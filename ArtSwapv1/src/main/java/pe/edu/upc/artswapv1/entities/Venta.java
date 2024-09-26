@@ -3,6 +3,7 @@ package pe.edu.upc.artswapv1.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -12,14 +13,11 @@ public class Venta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int IdVenta;
 
-    @Column(name = "Fecha_Venta", nullable = false)
-    private Date Fecha_Venta;
+    @Column(name = "FechaVenta", nullable = false)
+    private LocalDate FechaVenta;
 
     @Column(name = "Precio", nullable = false)
     private int Precio;
-
-    @Column(name = "Metodo_Pago", nullable = false, length = 20)
-    private String Metodo_Pago;
 
     @ManyToOne
     @JoinColumn(name="idObraArte")
@@ -32,11 +30,10 @@ public class Venta {
     public Venta() {
     }
 
-    public Venta(int idVenta, Date fecha_Venta, int precio, String metodo_Pago,MetodoPago metodoPago, ObraArte ObraArt) {
+    public Venta(int idVenta, LocalDate fechaVenta, int precio, MetodoPago metodoPago, ObraArte ObraArt) {
         IdVenta = idVenta;
-        Fecha_Venta = fecha_Venta;
+        FechaVenta = fechaVenta;
         Precio = precio;
-        Metodo_Pago = metodo_Pago;
         this.ObraArt = ObraArt;
         this.metodoPago=metodoPago;
     }
@@ -49,12 +46,12 @@ public class Venta {
         IdVenta = idVenta;
     }
 
-    public Date getFecha_Venta() {
-        return Fecha_Venta;
+    public LocalDate getFechaVenta() {
+        return FechaVenta;
     }
 
-    public void setFecha_Venta(Date fecha_Venta) {
-        Fecha_Venta = fecha_Venta;
+    public void setFechaVenta(LocalDate fechaVenta) {
+        FechaVenta = fechaVenta;
     }
 
     public int getPrecio() {
@@ -63,14 +60,6 @@ public class Venta {
 
     public void setPrecio(int precio) {
         Precio = precio;
-    }
-
-    public String getMetodo_Pago() {
-        return Metodo_Pago;
-    }
-
-    public void setMetodo_Pago(String metodo_Pago) {
-        Metodo_Pago = metodo_Pago;
     }
 
     public ObraArte getObraArt() {

@@ -29,4 +29,16 @@ public class ResenhaControlller {
             return m.map(x,ResenhaDTO.class);
         }).collect(Collectors.toList());
     }
+
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id){
+        rS.delete(id);
+    }
+    @PutMapping
+    public void modificar(@RequestBody ResenhaDTO dto){
+        ModelMapper m=new ModelMapper();
+        Resenha d=m.map(dto,Resenha.class);
+        rS.update(d);
+    }
+
 }

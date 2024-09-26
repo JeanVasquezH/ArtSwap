@@ -8,4 +8,8 @@ public interface IEventoService {
 
     public List<Evento> list();
     public void insert(Evento event);
+
+    public void delete(int id);
+    public void update(Evento event);
+
 }

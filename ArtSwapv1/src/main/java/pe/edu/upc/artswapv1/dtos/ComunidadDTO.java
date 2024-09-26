@@ -1,12 +1,13 @@
 package pe.edu.upc.artswapv1.dtos;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class ComunidadDTO {
     private int IdComunidad;
     private String Nombre;
     private String Descripcion;
-    private Date Fecha_Creacion;
+    private LocalDate FechaCreacion;
 
     public int getIdComunidad() {
         return IdComunidad;
@@ -32,11 +33,11 @@ public class ComunidadDTO {
         Descripcion = descripcion;
     }
 
-    public Date getFecha_Creacion() {
-        return Fecha_Creacion;
+    public LocalDate getFechaCreacion() {
+        return FechaCreacion;
     }
 
-    public void setFecha_Creacion(Date fecha_Creacion) {
-        Fecha_Creacion = fecha_Creacion;
+    public void setFechaCreacion(LocalDate fechaCreacion) {
+        FechaCreacion = fechaCreacion;
     }
 }

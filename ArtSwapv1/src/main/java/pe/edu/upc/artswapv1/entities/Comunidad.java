@@ -2,6 +2,7 @@ package pe.edu.upc.artswapv1.entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -18,16 +19,16 @@ public class Comunidad {
     @Column(name = "Descripcion", nullable = false, length = 50)
     private String Descripcion;
 
-    @Column(name = "Fecha_Creacion", nullable = false)
-    private Date Fecha_Creacion;
+    @Column(name = "FechaCreacion", nullable = false)
+    private LocalDate FechaCreacion;
 
     public Comunidad() {
     }
 
-    public Comunidad(String Nombre, String Descripcion, Date Fecha_Creacion) {
+    public Comunidad(String Nombre, String Descripcion, LocalDate Fecha_Creacion) {
         this.Nombre = Nombre;
         this.Descripcion = Descripcion;
-        this.Fecha_Creacion = Fecha_Creacion;
+        this.FechaCreacion = Fecha_Creacion;
     }
 
     public int getIdComunidad() {
@@ -54,12 +55,12 @@ public class Comunidad {
         Descripcion = descripcion;
     }
 
-    public Date getFecha_Creacion() {
-        return Fecha_Creacion;
+    public LocalDate getFechaCreacion() {
+        return FechaCreacion;
     }
 
-    public void setFecha_Creacion(Date fecha_Creacion) {
-        Fecha_Creacion = fecha_Creacion;
+    public void setFechaCreacion(LocalDate fechaCreacion) {
+        FechaCreacion = fechaCreacion;
     }
 }
 

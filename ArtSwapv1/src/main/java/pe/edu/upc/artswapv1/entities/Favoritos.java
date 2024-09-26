@@ -2,6 +2,7 @@ package pe.edu.upc.artswapv1.entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -11,8 +12,8 @@ public class Favoritos {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int IdFavoritos;
 
-    @Column(name = "Fecha_anadid", nullable = false)
-    private Date Fecha_anadid;
+    @Column(name = "Fechaanadid", nullable = false)
+    private LocalDate Fechaanadid;
 
     @ManyToOne
     @JoinColumn(name="idUsuario")
@@ -26,9 +27,9 @@ public class Favoritos {
     public Favoritos() {
     }
 
-    public Favoritos(int idFavoritos, Date fecha_anadid, Usuario usuario, ObraArte obraArt) {
+    public Favoritos(int idFavoritos, LocalDate fechaanadid, Usuario usuario, ObraArte obraArt) {
         IdFavoritos = idFavoritos;
-        Fecha_anadid = fecha_anadid;
+        Fechaanadid = fechaanadid;
         this.usuario = usuario;
         this.obraArt = obraArt;
     }
@@ -41,12 +42,13 @@ public class Favoritos {
         IdFavoritos = idFavoritos;
     }
 
-    public Date getFecha_anadid() {
-        return Fecha_anadid;
+
+    public LocalDate getFechaanadid() {
+        return Fechaanadid;
     }
 
-    public void setFecha_anadid(Date fecha_anadid) {
-        Fecha_anadid = fecha_anadid;
+    public void setFechaanadid(LocalDate fechaanadid) {
+        Fechaanadid = fechaanadid;
     }
 
     public Usuario getUsuario() {

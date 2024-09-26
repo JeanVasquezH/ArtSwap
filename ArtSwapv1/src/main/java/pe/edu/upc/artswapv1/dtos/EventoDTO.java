@@ -2,14 +2,13 @@ package pe.edu.upc.artswapv1.dtos;
 
 import pe.edu.upc.artswapv1.entities.ObraArte;
 import pe.edu.upc.artswapv1.entities.Usuario;
-
-import java.util.Date;
+import java.time.LocalDate;
 
 public class EventoDTO {
     private int IdEvento;
     private String Descripcion;
-    private Date Fecha_Inicio;
-    private Date Fecha_Fin;
+    private LocalDate FechaInicio;
+    private LocalDate FechaFin;
     private String Tipo;
     private String Ubicacion;
     private int Valoracion;
@@ -33,20 +32,20 @@ public class EventoDTO {
         Descripcion = descripcion;
     }
 
-    public Date getFecha_Inicio() {
-        return Fecha_Inicio;
+    public LocalDate getFechaInicio() {
+        return FechaInicio;
     }
 
-    public void setFecha_Inicio(Date fecha_Inicio) {
-        Fecha_Inicio = fecha_Inicio;
+    public void setFechaInicio(LocalDate fechaInicio) {
+        FechaInicio = fechaInicio;
     }
 
-    public Date getFecha_Fin() {
-        return Fecha_Fin;
+    public LocalDate getFechaFin() {
+        return FechaFin;
     }
 
-    public void setFecha_Fin(Date fecha_Fin) {
-        Fecha_Fin = fecha_Fin;
+    public void setFechaFin(LocalDate fechaFin) {
+        FechaFin = fechaFin;
     }
 
     public String getTipo() {

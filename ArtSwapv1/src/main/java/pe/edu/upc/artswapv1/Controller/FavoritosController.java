@@ -32,4 +32,15 @@ public class FavoritosController {
             return m.map(x, FavoritosDTO.class);
         }).collect(Collectors.toList());
     }
+
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id){
+        iFa.delete(id);
+    }
+    @PutMapping
+    public void modificar(@RequestBody FavoritosDTO dto){
+        ModelMapper m=new ModelMapper();
+        Favoritos d=m.map(dto,Favoritos.class);
+        iFa.update(d);
+    }
 }

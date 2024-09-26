@@ -2,14 +2,15 @@ package pe.edu.upc.artswapv1.entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
-@Table(name="Obra_Arte")
+@Table(name="ObraArte")
 public class ObraArte {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int IdObra_Arte;
+    private int IdObraArte;
 
     @Column(name = "Titulo", nullable = false, length = 100)
     private String Titulo;
@@ -17,8 +18,8 @@ public class ObraArte {
     @Column(name = "Descripcion", nullable = false, length = 100)
     private String Descripcion;
 
-    @Column(name = "Fecha_Creacion", nullable = false)
-    private Date Fecha_Creacion;
+    @Column(name = "FechaCreacion", nullable = false)
+    private LocalDate FechaCreacion;
 
     @Column(name = "Estado", nullable = false, length = 20)
     private String Estado;
@@ -38,24 +39,18 @@ public class ObraArte {
     public ObraArte() {
     }
 
-    public ObraArte(int idObra_Arte, String titulo, String descripcion, Date fecha_Creacion, String estado, double precio, int valoracion, Usuario usua) {
-        IdObra_Arte = idObra_Arte;
+    public ObraArte(int idObraArte, String titulo, String descripcion, LocalDate fechaCreacion, String estado, double precio, int valoracion, Usuario usua) {
+        IdObraArte = idObraArte;
         Titulo = titulo;
         Descripcion = descripcion;
-        Fecha_Creacion = fecha_Creacion;
+        FechaCreacion = fechaCreacion;
         Estado = estado;
         Precio = precio;
         Valoracion = valoracion;
         this.usua = usua;
     }
 
-    public int getIdObra_Arte() {
-        return IdObra_Arte;
-    }
 
-    public void setIdObra_Arte(int idObra_Arte) {
-        IdObra_Arte = idObra_Arte;
-    }
 
     public String getTitulo() {
         return Titulo;
@@ -81,12 +76,20 @@ public class ObraArte {
         Estado = estado;
     }
 
-    public Date getFecha_Creacion() {
-        return Fecha_Creacion;
+    public int getIdObraArte() {
+        return IdObraArte;
     }
 
-    public void setFecha_Creacion(Date fecha_Creacion) {
-        Fecha_Creacion = fecha_Creacion;
+    public void setIdObraArte(int idObraArte) {
+        IdObraArte = idObraArte;
+    }
+
+    public LocalDate getFechaCreacion() {
+        return FechaCreacion;
+    }
+
+    public void setFechaCreacion(LocalDate fechaCreacion) {
+        FechaCreacion = fechaCreacion;
     }
 
     public double getPrecio() {

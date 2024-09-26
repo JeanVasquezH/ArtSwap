@@ -22,4 +22,14 @@ public class EventoServiceImplement implements IEventoService {
     public void insert(Evento event) {
         iR.save(event);
     }
+
+    @Override
+    public void delete(int id) {
+        iR.deleteById(id);
+    }
+
+    @Override
+    public void update(Evento event) {
+        iR.save(event);
+    }
 }

@@ -2,7 +2,8 @@ package pe.edu.upc.artswapv1.entities;
 
 import jakarta.persistence.*;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 @Entity
 @Table(name = "Intercambio")
@@ -11,8 +12,8 @@ public class Intercambio {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int IdIntercambio;
 
-    @Column(name = "Fecha_Intercambio", nullable = false)
-    private Date Fecha_Intercambio;
+    @Column(name = "FechaIntercambio", nullable = false)
+    private LocalDate FechaIntercambio;
 
     @Column(name = "Estado", nullable = false, length = 20)
     private String Estado;
@@ -29,9 +30,9 @@ public class Intercambio {
     public Intercambio(){
     }
 
-    public Intercambio(int idIntercambio, Date fecha_Intercambio, String estado,  Usuario usuario,  ObraArte obraArte) {
+    public Intercambio(int idIntercambio, LocalDate fechaintercambio, String estado,  Usuario usuario,  ObraArte obraArte) {
         IdIntercambio = idIntercambio;
-        Fecha_Intercambio = fecha_Intercambio;
+        FechaIntercambio = fechaintercambio;
         Estado = estado;
         this.usuario = usuario;
         this.obraArte = obraArte;
@@ -45,12 +46,12 @@ public class Intercambio {
         IdIntercambio = idIntercambio;
     }
 
-    public Date getFecha_Intercambio() {
-        return Fecha_Intercambio;
+    public LocalDate getFechaIntercambio() {
+        return FechaIntercambio;
     }
 
-    public void setFecha_Intercambio(Date fecha_Intercambio) {
-        Fecha_Intercambio = fecha_Intercambio;
+    public void setFechaIntercambio(LocalDate fechaIntercambio) {
+        FechaIntercambio = fechaIntercambio;
     }
 
     public String getEstado() {

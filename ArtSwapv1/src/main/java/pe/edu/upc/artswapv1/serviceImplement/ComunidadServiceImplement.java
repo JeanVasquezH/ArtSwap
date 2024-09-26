@@ -30,5 +30,9 @@ public class ComunidadServiceImplement implements IComunidadService {
         cR.save(comu);
     }
 
+    @Override
+    public List<String[]> CantidadPersonasPorComunidad() {
+        return cR.CantidadPersonasPorComunidad();
+    }
 
 }

@@ -3,11 +3,11 @@ package pe.edu.upc.artswapv1.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="Metodo_Pago")
+@Table(name="MetodoPago")
 public class MetodoPago {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int IdMetodo_Pago;
+    private int IdMetodoPago;
 
     @Column(name = "Tipo", nullable = false, length = 15)
     private String Tipo;
@@ -18,18 +18,18 @@ public class MetodoPago {
     public MetodoPago(){
     }
 
-    public MetodoPago(int idMetodo_Pago, String tipo, String descripcion) {
-        IdMetodo_Pago = idMetodo_Pago;
+    public MetodoPago(int idMetodoPago, String tipo, String descripcion) {
+        IdMetodoPago = idMetodoPago;
         Tipo = tipo;
         Descripcion = descripcion;
     }
 
-    public int getIdMetodo_Pago() {
-        return IdMetodo_Pago;
+    public int getIdMetodoPago() {
+        return IdMetodoPago;
     }
 
-    public void setIdMetodo_Pago(int idMetodo_Pago) {
-        IdMetodo_Pago = idMetodo_Pago;
+    public void setIdMetodoPago(int idMetodoPago) {
+        IdMetodoPago = idMetodoPago;
     }
 
     public String getTipo() {

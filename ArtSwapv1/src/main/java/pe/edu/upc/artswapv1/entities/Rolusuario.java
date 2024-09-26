@@ -5,11 +5,11 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "roles", uniqueConstraints = {@UniqueConstraint(columnNames = {"user_id", "rol"})})
+@Table(name = "roles", uniqueConstraints = {@UniqueConstraint(columnNames = {"userid", "rol"})})
 public class Rolusuario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long IdRol_usuario;
+    private Long IdRolusuario;
 
     @Column(name = "Descripcion", nullable = false,length = 35)
     private String Descripcion;
@@ -22,7 +22,7 @@ public class Rolusuario implements Serializable {
     private String rol;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "userid", nullable = false)
     private Usuario user;
 
     public String getRol() {
@@ -44,17 +44,17 @@ public class Rolusuario implements Serializable {
     //
 
 
-    public Rolusuario(Long idRol_usuario, String descripcion) {
-        IdRol_usuario = idRol_usuario;
+    public Rolusuario(Long idRolusuario, String descripcion) {
+        IdRolusuario = idRolusuario;
         Descripcion = descripcion;
     }
 
-    public Long getIdRol_usuario() {
-        return IdRol_usuario;
+    public Long getIdRolusuario() {
+        return IdRolusuario;
     }
 
-    public void setIdRol_usuario(Long idRol_usuario) {
-        IdRol_usuario = idRol_usuario;
+    public void setIdRolusuario(Long idRolusuario) {
+        IdRolusuario = idRolusuario;
     }
 
     public String getDescripcion() {

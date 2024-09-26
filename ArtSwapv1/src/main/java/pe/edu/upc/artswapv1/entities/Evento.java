@@ -1,8 +1,6 @@
 package pe.edu.upc.artswapv1.entities;
-
 import jakarta.persistence.*;
-
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "Evento")
@@ -14,11 +12,11 @@ public class Evento {
     @Column(name = "Descripcion", nullable = false,length = 100)
     private String Descripcion;
 
-    @Column(name = "Fecha_Inicio", nullable = false)
-    private Date Fecha_Inicio;
+    @Column(name = "FechaInicio", nullable = false)
+    private LocalDate FechaInicio;
 
-    @Column(name = "Fecha_Fin", nullable = false)
-    private Date Fecha_Fin;
+    @Column(name = "FechaFin", nullable = false)
+    private LocalDate FechaFin;
 
     @Column(name = "Tipo", nullable = false,length = 20)
     private String Tipo;
@@ -41,11 +39,11 @@ public class Evento {
     public Evento() {
     }
 
-    public Evento(int idEvento, String descripcion, Date fecha_Inicio, Date fecha_Fin, String tipo, String ubicacion, int valoracion,ObraArte obraArt,Usuario usua) {
+    public Evento(int idEvento, String descripcion, LocalDate fechainicio, LocalDate fechafin, String tipo, String ubicacion, int valoracion,ObraArte obraArt,Usuario usua) {
         IdEvento = idEvento;
         Descripcion = descripcion;
-        Fecha_Inicio = fecha_Inicio;
-        Fecha_Fin = fecha_Fin;
+        FechaInicio = fechainicio;
+        FechaFin = fechafin;
         Tipo = tipo;
         Ubicacion = ubicacion;
         Valoracion = valoracion;
@@ -70,20 +68,21 @@ public class Evento {
         Descripcion = descripcion;
     }
 
-    public Date getFecha_Inicio() {
-        return Fecha_Inicio;
+
+    public LocalDate getFechaInicio() {
+        return FechaInicio;
     }
 
-    public void setFecha_Inicio(Date fecha_Inicio) {
-        Fecha_Inicio = fecha_Inicio;
+    public void setFechaInicio(LocalDate fechaInicio) {
+        FechaInicio = fechaInicio;
     }
 
-    public Date getFecha_Fin() {
-        return Fecha_Fin;
+    public LocalDate getFechaFin() {
+        return FechaFin;
     }
 
-    public void setFecha_Fin(Date fecha_Fin) {
-        Fecha_Fin = fecha_Fin;
+    public void setFechaFin(LocalDate fechaFin) {
+        FechaFin = fechaFin;
     }
 
     public String getTipo() {

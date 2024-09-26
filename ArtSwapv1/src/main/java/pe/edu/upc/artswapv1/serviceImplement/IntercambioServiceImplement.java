@@ -22,4 +22,14 @@ public class IntercambioServiceImplement implements IIntercambioService {
     public void insert(Intercambio inter) {
         iR.save(inter);
     }
+
+    @Override
+    public void delete(int id) {
+        iR.deleteById(id);
+    }
+
+    @Override
+    public void update(Intercambio cambio) {
+        iR.save(cambio);
+    }
 }
