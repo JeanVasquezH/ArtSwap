@@ -1,4 +1,4 @@
-FROM amazoncorretto:17-alpine-jdk
+FROM amazoncorretto:21-alpine-jdk
 MAINTAINER ESMERALDA
-COPY target/ArtSwapv1-0.0.1-SNAPSHOT.jar GiftServices.jar
-ENTRYPOINT ["java", "-jar","/GiftServices.jar"]
+COPY target/ArtSwapv1-0.0.1-SNAPSHOT.jar app.jar
+ENTRYPOINT ["java", "-jar","/app.jar"]
