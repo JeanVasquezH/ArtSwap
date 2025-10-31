@@ -9,5 +9,7 @@ class ArtSwapv1ApplicationTests {
     @Test
     void contextLoads() {
     }
-
+   
+ void contextLoads() {
+    }
 }
